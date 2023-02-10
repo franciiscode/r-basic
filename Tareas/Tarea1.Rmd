@@ -1,0 +1,78 @@
+---
+title: "Tarea1"
+author: "Francisco"
+date: "2022-07-29"
+output:
+  pdf_document: default
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Utilizando R como calculadora
+
+### Pregunta 1
+Si hubiéramos empezado a contar segundos a partir de las 12 campanadas que marcan el inicio de 2018, ¿a qué hora de qué día de qué año llegaríamos a los 250 millones de segundos? ¡Cuidado con los años bisiestos
+```{r}
+# 1 día = 86400 segundos
+# 1hr = 3600 segundos
+
+250000000 %/%86400  #2893
+250000000 %% 86400 # 44800
+# 2893 días y  44800 seg 
+2893 %/% 365 #7
+2893 %% 365 # 338 
+#7 años y 338 días
+44800 %/% 3600 #12hrs
+
+# 2025, dia 338, 12hrs pero como pasaron dos bisiestos (2020, 2024) se restan dos días
+# por lo tanto: 2025, día 336, 12pm
+  
+
+```
+
+**Respuesta final:** A las 12pm del 2 de Diciembre del 2025
+
+
+### Pregunta 2
+Crea una función en R que resuelva una ecuación de primer grado (de la forma Ax + B = 0). Es decir, los parámetros deben ser los coeficientes (en orden) y la función tiene que devolver la solución. Por ejemplo, si la ecuación es 2x + 4 = 0, la función tendría que devolver -2.
+
+Una vez creada la función, utilízala para resolver las siguientes ecuaciones de primer grado:
+• 5x + 3 = 0
+• 5x + 3 = 0
+• x + 1 = 1
+
+```{r}
+ec1 = function(a, b) {
+  -b/a
+}
+# 5x + 3 = 0
+ec1(5,3)
+# 7x + 4 = 18
+ec1(7,-14)
+#x + 1 = 1
+ec1(1,0)
+```
+
+### Pregunta 3
+Da una expresión para calcular 3e−π con R y a continuación, da el resultado obtenido redondeado a 3 cifras decimales.
+
+```{r}
+p3 = 3*exp(1) - pi
+round(p3,3)
+```
+
+### Pregunta 4
+Da una expresión para calcular el módulo del número complejo (2 + 3i)^2 / (5 + 8i)
+y, a continuación, da el resultado obtenido redondeado a 3 cifras decimales.
+
+```{r}
+comp = (2+3i)^2/(5+8i)
+round(Mod(comp),3)
+
+```
+

@@ -1,0 +1,136 @@
+---
+title: "Notas tema 1 - DocumentacionRMD"
+author: "Curso de Estadística Descriptiva"
+date: "2022-09-15"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Documentación con R Markdown
+
+## LaTeX (para los símbolos matemáticos)
+
+Matrices: $\begin{pmatrix} a_{11} & a_{12}  & a_{13}\end{pmatrix}$
+Fracciones: $\frac {a}{b}$
+
+
+## Chunks (para el código) 
+
+**Chunk.** Bloque de código
+
+
+Los chunks se pueden crear de las sig. Formas:
+
+- En el menú despegable chunks y seleccionar R
+- Manualmente (Conformado por 3 backsticks (apertura y cierre), lenguaje y el nombre del chunk.)
+- Alt + Control + I
+  
+**Creando nuestro primer chunk para calcular ** $\sqrt{2} + \tan(\pi/2)$:
+
+```{r PrimeraChunk}
+
+sqrt(2) + tan(pi/2)
+
+```
+### Parámetros de los chunks
+
+|Parámetro|Definición|
+---------|-----------
+**echo**|echo = `False` esconde la instrucción del chunk, al contrario de `True`
+**message**| message = `True` muestra un mensaje durante la ejecución (como la carga de algún paquete, por ej.)
+**warning**| warning = `True` muestra una advertencia de alguna función al ejecutarse
+**eval** |Igualado a `True` se evalúa la instrucción y se muestra el resultado, al contrario de `False`
+**comment** | comment = NA evita que aparezcan ##
+
+Para el parámetro **results** existen 4 posibles valores
+
+Significado |  Código  |  Resultado
+--------------------|--------------------|--------------------
+`results` | `markup` | Valor por defecto. Nos muestra los resultados en el documento final línea a línea, encabezados por `##`
+`results` | `hide` | No se nos muestra el resultado en el documento final. Similiar a eval, con la diferencia que aquí sí se evalúa
+`results` | `asis` | Nos devuelve los resultados línea a línea de manera literal en el documento final y el programa con el que se abre el documento final los interpreta como texto y formatea adecuadamente
+`results` | `hold` | Muestra todos los resultados al final del bloque de código
+
+
+### Los Chunks en modo línea
+
+Para introducir código dentro de una línea de texto como ésta y que se ejecute al compilarse el archivo mostrando así el resultado del mismo lo hacemos utilizando: 
+
+Por ejemplo:
+
+Cuando queremos hacer la raíz cuadrado de dos, podemos hacerlo:
+
+- En LaTeX: $\sqrt{2}$
+- En `R` haciendo `r sqrt(2)`
+- Que viene siendo lo mismo que $\sqrt{2}=$ `r sqrt(2)`
+
+
+## Documentación de Texto 
+
+Sintaxis para los títulos
+
+# Título 1
+## Título 2
+### Título 3
+#### Título 4
+##### Título 5
+
+Esto es un ejemplo de texto llano. Podemos acompañar con ello al código de `R`y las fórmulas \LaTeX.
+
+Esto sería una nueva línea de texto. Para que separe los párrafos, necesitamos al menos dos intros.
+
+Para colocar texto en cursiva: *utilizamos un asterisco (o guión bajo) al inicio y al final del texto*.
+
+Para colocar texto en negrita: **utilizamos doble asterisco (o doble guión bajo)  al inicio y al final del texto**.
+
+Los superíndices van con el sombrerito ^ al inicio y al final del texto: n^2^
+
+Para tachar palabras utilizamos la doble tilde ~~se hace con alt + 126«~~.
+
+Para utilizar los links, utilizamos [Link](https:\\google.com)
+
+Para colocar imagenes: ![](../teoria/Imgs/ABsets.png)
+
+***
+
+Aquí empezamos otra cosa
+
+
+>Esto es una cita en bloque 
+
+### Listas no ordenadas
+
+Van con un guión medio 
+
+- item1
+- item2
+- item3
+    + sub item 3.1
+    + sub item 3.2
+- ...
+
+
+### Las listas ordenadas 
+
+Van con su número índice
+
+1. Item 1
+2. Item 2
+3. Item 3
+    + sub item 3.1
+    
+4. ...
+
+### Tablas
+
+Alumno    | Notas
+----------|-------
+Francisco | 6.5
+Ricardo   | 7.8
+Ivan      | 9.8
+Luis      | 9.9
+
+Podemos buscar la librería Kable para tablas más interesantes.

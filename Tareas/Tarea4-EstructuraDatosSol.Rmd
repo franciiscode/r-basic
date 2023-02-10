@@ -1,0 +1,118 @@
+---
+title: "Tarea4-EstructuraDatos-Resuelta"
+author: "Curso Estadística Descriptiva"
+date: "2022-10-19"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pregunta 1
+
+```{r}
+A = rbind(c(1,2,3,4),c(4,3,2,1), c(0,1,0,2),c(3,0,4,0))
+A
+B <- rbind(c(4,3,2,1),c(0,3,0,4), c(1,2,3,4),c(0,1,0,2))
+B
+```
+
+$A \cdot B$ 
+```{r}
+A%*%B
+```
+
+
+$B \cdot A$ 
+```{r}
+B%*%A
+```
+
+
+$(A \cdot B)^t$ 
+```{r}
+t(A%*%B)
+```
+
+
+$B^t \cdot A$ 
+```{r}
+t(B)%*%A
+```
+
+
+$(A \cdot B)^{-1}$ 
+```{r}
+solve(A%*%B)
+```
+
+
+$A^{-1} \cdot B^t$ 
+```{r}
+solve(A)%*%t(B)
+```
+
+## Pregunta 2
+
+
+Definición del vector **dni**:
+```{r}
+dni = c(8,2,4,3,2,6,0,1)
+```
+
+
+Vector **dni** al cuadrado:
+```{r}
+dni^2
+```
+
+
+Raiz cuadrado del vector **dni**:
+```{r}
+sqrt(dni)
+```
+
+
+Suma total del vector **dni**
+
+```{r}
+sum(dni)
+```
+
+## Pregunta 3
+
+Definición del vector **name**:
+
+```{r}
+name <- c("F", "R","A", "N", "C","I","S","C","O", "R","M","Z")
+
+
+```
+
+Subvector de **name** con solo el nombre:
+
+```{r}
+
+name[1:(length(name)-3)]
+```
+Subvector de **name** con solo el apellido:
+
+```{r}
+name[10:length(name)]
+```
+
+Vector **name** ordenado alfabéticamente
+
+```{r}
+sort(name)
+```
+
+Vector **name** en matriz
+```{r}
+A = matrix(name,nrow = 4)
+A
+```
+
+
