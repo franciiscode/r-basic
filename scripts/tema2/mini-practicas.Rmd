@@ -1,0 +1,60 @@
+---
+title: "mini practicas"
+author: "Francisco Careaga"
+date: "2023-02-17"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r prueba_echo, echo=FALSE, eval=TRUE}
+
+x = pi * sin(pi/2)
+
+```
+Hola, esto es una prueba: ${x} =$ `r pi`
+
+Hola
+```{r}
+sqrt(2) + tan(pi/2)
+
+```
+
+Así introducimos código inline `r pi * 2` 
+
+Una lista está compuesta por componentes. se crea con la función list()
+l1 = list(comp = ...,comp2 = ..., cn...)
+lista$componente_name
+
+
+Podemos modificar un vector con v[i]= 1
+
+integer Z (enteros)
+numerical R (reales)
+logical (TRUE y FALSE)
+character (letras)
+complex 
+
+Formas de extraer datos del vector
+
+La función which sirve para seleccionar valores de un vector que satisfagan una condición booleana.
+
+La función devuelve las posiciones donde se satisface esa cond.
+
+which.max(v) nos dará la posición del elemento más grande del vector.
+which.min(v) nos dará la posición del elemento más peque del vector.
+
+
+factor() nos sirve para definir factores a partir de las entradas de un vector
+
+factor(c(1,2,3),labels = c("Rep","Ap","Ex"))
+
+

@@ -28,14 +28,17 @@ Si hubiéramos empezado a contar segundos a partir de las 12 campanadas que marc
 2893 %% 365 # 338 
 #7 años y 338 días
 44800 %/% 3600 #12hrs
+44800 %% 3600 #1600seg
+1600 %/% 60 #26min
+1600 %% 60 #40seg
 
-# 2025, dia 338, 12hrs pero como pasaron dos bisiestos (2020, 2024) se restan dos días
-# por lo tanto: 2025, día 336, 12pm
+# Respuesta: 2025, dia 338, 12hrs pero como pasaron dos bisiestos (2020, 2024) se restan dos días
+# por lo tanto: 2025, día 336, 12:26:40 pm
   
 
 ```
 
-**Respuesta final:** A las 12pm del 2 de Diciembre del 2025
+**Respuesta final:** A las 12:26pm del 2 de Diciembre del 2025
 
 
 ### Pregunta 2

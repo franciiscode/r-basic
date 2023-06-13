@@ -241,3 +241,12 @@ z2
 Mod(z2)
 Arg(z2)
 pi/2
+
+
+op <- function(x,y){
+  print(x+y);
+  print(x-y);
+  print(x * y);
+  print(x/y)
+}
+op(2,1)

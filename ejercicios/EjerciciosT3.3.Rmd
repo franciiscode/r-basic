@@ -38,4 +38,13 @@ binomioNewton = function(a,b,n){
 binomioNewton(2,1,2)
 binomioNewton(3,4,14)
 ```
+```{r}
+genero = c("H","M","M","H","H")
+edad = c(21,28,91,73,18)
+hijos = c(1,2,2,3,2)
+
+newdf = data.frame(gen = genero, age = edad, h = hijos,stringsAsFactors = FALSE)
+
+newdf
+```
 

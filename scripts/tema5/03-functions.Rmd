@@ -13,7 +13,7 @@ sapply(iris[, 1:4], sum)
 f = function(x){sqrt(sum(x^2))}
 sapply(iris[, 1:4], f)
 ```
-
+a = x: function{x*y}
 
 ```{r}
 df = data.frame(C1 = c(1,2,NA,4), C2 = c(5,NA,2,3))

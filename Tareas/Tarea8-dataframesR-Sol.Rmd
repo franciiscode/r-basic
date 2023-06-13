@@ -1,0 +1,75 @@
+---
+title: 'Tarea8: Dataframes con R'
+author: "Francisco Ramirez"
+date: "2023-04-25"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r}
+medallas = read.csv(file = "data/medals.csv",sep = ",")
+head(medallas)
+```
+
+## Pregunta 1
+
+```{r}
+# ¿Cuántos deportistas aparecen en el data frame?
+
+nrow(medallas)
+```
+## Pregunta 2
+```{r numero1}
+length(medallas[medallas$Medal =="Gold",9]) #Oro
+length(medallas[medallas$Medal =="Bronze",9]) #Bronze
+
+length(medallas[medallas$Medal =="Silver",9]) #Plata
+
+```
+## Pregunta 3
+
+```{r}
+# ¿En cuántos lugares se han hecho olimpiadas de invierno?
+
+length(levels(medallas$City))
+
+```
+## Pregunta 4
+
+#¿Cuántos hombres y cuántas mujeres hay?
+
+```{r}
+
+
+nrow(medallas[medallas$Event.gender=="M",]) #1386
+nrow(medallas[medallas$Event.gender=="W",]) # 802
+
+```
+## Pregunta 5
+
+¿En qué año participaron más deportistas?
+```{r}
+aggregate(X~Year, data = medallas, FUN = length) #2006
+```
+## Pregunta 6
+
+Pregunta 6
+El campo NOC indica el país del ganador de la medalla. ¿Qué país puede presumir de haber ganado más
+medallas de oro en los juegos de invierno entre 1960 y 1996?
+
+```{r}
+subset(medallas,(medallas$Year>=1960 & medallas$Year<=1996), )->submedals
+
+aggregate(X~NOC, data = submedals, FUN = length)->subcount 
+
+subcount$X[which.max(subcount$X)] #178
+
+#URSS con 178
+
+```
+

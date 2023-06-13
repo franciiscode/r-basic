@@ -5,6 +5,23 @@ date: "23/12/2018"
 output: html_document
 ---
 
+#probando la carga
+
+```{r}
+df2 = read.table("../../data/StudentsData",
+                 header = TRUE,
+                 sep="")
+head(df2,10)
+              
+```
+```{r}
+flags = read.table("../../data/flag.data",sep=",",stringsAsFactors = )
+head(flags
+     )
+
+```
+
+
 # Carga de ficheros local
 
 Breed (1/5/8), 
@@ -17,15 +34,17 @@ Back fat (in.),
 sale height at shoulder (in.) 
 sale weight (lbs.) of three breeds of bulls.
 
+
 ```{r}
-df = read.table("../../data/bulls.dat",
+df = read.table("..\..\data\bulls.dat,
                 header = FALSE, 
                 col.names = c("breed", "sale_price", "shoulder",
                           "fat_free", "percent_ff", "frame_scale",
                           "back_fat", "sale_height", "sale_weight"),
                 sep = "", dec = ".")
 head(df)
-```
+
+
 
 
 # Carga desde URL
@@ -45,18 +64,19 @@ str(df2)
 # Factores en un DF
 
 ```{r}
-df3 = read.table("https://maitra.public.iastate.edu/stat501/datasets/olive.dat",
-                 stringsAsFactors = FALSE,
-                 header = TRUE)
-str(df3)
+letter = read.table("https://people.sc.fsu.edu/~jburkardt/data/csv/letter_frequency.csv",
+             stringsAsFactors = TRUE,
+            header = TRUE,
+            sep = ",")
+letter
 ```
 
 # Guardar un DF
 
 ```{r}
-write.table(df3, file = "../../data/olive.txt", dec = ".")
-df4 = read.table("../../data/olive.txt", header = TRUE, dec = ".")
-head(df4)
+write.table(letter, file = "../../data/frecuencia_letras.txt", dec = ".")
+frecuencia = read.table("../../data/frecuencia_letras.txt", header = TRUE, dec = ".")
+head(frecuencia1)
 ```
 
 
