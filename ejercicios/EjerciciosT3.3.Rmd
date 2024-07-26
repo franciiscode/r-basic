@@ -2,7 +2,9 @@
 title: "Binomio de Newton"
 author: "María Santos"
 date: "30/12/2018"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
