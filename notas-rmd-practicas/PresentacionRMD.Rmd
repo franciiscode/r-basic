@@ -1,0 +1,62 @@
+---
+title: "PruebaDiapositivaRMardown"
+author: "Francisco"
+date: "2024-08-05"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+Esta es una presentación de prueba con Rmarkdwon. Esto es una [CheatSheet de RMarkdown](http://rmarkdown.rstudio.com).
+
+**Nombre: ** Francisco Careaga
+
+Este es un chunk en linea mostrando el valor de pi $\pi =$ `r pi` declaramos la variable **x** y **y**
+```{r,echo=TRUE, eval = FALSE,results='hold'}
+x = round(pi,4)
+print(x)
+y = round(exp(1),4)
+print(y)
+```
+## Tipos de datos en R
+
+Los tipos de datos en R son:
+
+-Character `'hola'`
+-Logical: `TRUE or FALSE`
+-Integer: `-1,-2,0,1,2,3,..`
+-Complex: `z = a + bi`
+-Numeric: `3.1416, 2.71,..`  
+
+## Objetivos
+
+- Sumas
+$$a+b = b-a$$
+- Multiplicaciones
+$$a\cdot b = b\cdot a$$
+- Otros simbolos
+$$\int_{a}^{b}{f(x) = \{a,b,c,d\}} $$
+$$\Delta x= x_1 - x_0$$
+
+## Slide with R Output
+Como vemos en la siguiente tabla, los datos muestran una diferencia notable...
+$\frac{a}{b} + \frac{a}{b} = \frac{2a}{b} = 2a $
+$$\int(x^2+1)= $$
+$\sum_{a}^2$
+$$\sum_{a}^2$$
+
+```{r cars, echo = FALSE}
+summary(cars)
+```
+
+## Slide with Plot
+
+
+```{r pressure}
+plot(pressure)
+```
+

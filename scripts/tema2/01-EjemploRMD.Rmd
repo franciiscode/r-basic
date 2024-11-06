@@ -13,15 +13,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
 ```{r cars}
-summary(cars)
+library(reticulate)
+use_python("/Users/PC/anaconda3/envs/curso-estadistica-r-py/python.exe")
+
 ```
 
 ## Including Plots
+```{r}
+p<- import("numpy", convert = FALSE)
+a = p$array(c(1:5))
+print(a)
+```
+```{r}
+a_r <- py_to_r(a)
+print(a_r)
+```
 
 You can also embed plots, for example:
 
@@ -34,12 +41,18 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 ### Nuestras propias chunks
 
 Vamos a calcular $\sqrt{2} - e^{-2}$:
-```{r miPrimeraChunk, echo = TRUE, eval = TRUE, results='markup'}
+```{r miPrimeraChunk, echo = TRUE, eval = TRUE}
 sqrt(2) - exp(-2)
 x = 1:5
 sqrt(x)
 ```
 
+## Practicando Chunks
+Calculo de $\sqrt{2} + \tan\left(\dfrac{\pi}{2}\right)$
+```{r EjemploDeChunk}
+sqrt(2) - tan(pi/2)
+
+```
 
 ```{r magic, message=TRUE, results='markup'}
 library(magic)

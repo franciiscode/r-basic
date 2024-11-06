@@ -78,7 +78,7 @@ Sintaxis para los títulos
 #### Título 4
 ##### Título 5
 
-Esto es un ejemplo de texto llano. Podemos acompañar con ello al código de `R`y las fórmulas \LaTeX.
+Esto es un ejemplo de texto llano. Podemos acompañar con ello al código de `R` y las fórmulas \LaTeX.
 
 Esto sería una nueva línea de texto. Para que separe los párrafos, necesitamos al menos dos intros.
 
