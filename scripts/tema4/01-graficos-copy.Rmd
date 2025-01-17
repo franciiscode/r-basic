@@ -169,4 +169,65 @@ plot(tan, xlim = c(-pi,pi), ylim = c(-4,4), main = "Función parábola",
 abline(v = c(-pi/2,pi/2),col = "red")
 
 ```
+ ### Añadir texto y curvas a un gráfico
+ 
+ **Añadir líneas y curvas** con `lines(x,y)` y `curve(x,y)`
+ 
+```{r, añadirLineas}
+f <- function(x){x^2}
+
+plot(f,xlim = c(-3,3),col="red")
+lines(-3:3,f(-3:3),col = "lightgreen")
+curve(x^3,lty = 2,lw = 2, col = "magenta",add = TRUE)
+
+legend("center",legend = c("x^2","x^2","x^3"), col = c("red","lightgreen","magenta"),
+       lty = c("solid","solid","dashed"))
+```
+
+### Añadiendo leyendas a los gráficos
+
+```{r}
+plot(f,xlim = c(-3,3),lwd = 2,col = "salmon1",main = "Gráfico función parábola",xlab = "x",
+     ylab = expression(x^2))
+abline(h = 0:9, v = 0, col = "lightgrey", lty = "dotted" )
+points(x = -3:3,y=f(-3:3), col = "lightblue",cex = 1.5,pch=16)
+
+secu = seq(-3,3,0.2)
+lines(secu,f(secu),col = "navy",lty = "dotted",lwd = 2) #curva
+
+curve(sin(x),col = "lightgreen",add = TRUE)
+
+legend("center",col = c("salmon1","lightblue","navy","lightgreen"),
+       legend = c("f(x) = x^2","puntos", "Linea poligonal", "sen(x)"),
+       lty = c("solid","dotted","dotted","solid"),
+       lwd = 3, bty = "l"
+       )
+```
+
+Mas leyendas
+
+```{r}
+x = seq(0,2*pi,0.1)
+plot(x,sin(x),type="l",col="blue",lwd=3, xlab="", ylab="")
+lines(x,cos(x),col="green",lwd=3)
+lines(x, tan(x), col="purple",lwd=3)
+
+legend("bottomleft",col = c("blue","green","purple"),
+       legend = c("sen(x)","cos(x)","tan(x)"),bty = "l",lwd = 3)
+
+
+```
+Añadiendo segmentos, simbolos, polígonos
+
+```{r}
+x = c(5*(1:10))
+plot(x,c(exp(-x)+(-1)^x*x/2*sin(x)^2), xlab = "", ylab = "", 
+     main = "Grafico con varios elementos")
+segments(10,0,40,0, col = "red", lwd = 4)
+arrows(10,0,40,-10, col = " blue", length = 0.5, angle = 5, code = 3)
+symbols(40,0,stars = cbind(1,.5,1,.5,1,.5,1,.5,1,.5), add = TRUE, lwd = 3, inches = 0.5)
+symbols(40,0,stars = cbind(1,0.7,1,0.7,1,0.7,1,0.5,1,0.7), add = TRUE, lwd = 3)
+polygon(c(20,30,40),c(10,-10,10), col = "gold", density = 3, angle = 90, lty = 1, 
+        lwd = 5)
+```
 
